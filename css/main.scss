@@ -1,13 +1,26 @@
 @import 'https://fonts.googleapis.com/css?family=Open+Sans:400,700';
+
+@mixin column-count($column) {
+  -webkit-column-count: $column;
+  -moz-column-count: $column;
+  column-count: $column;
+}
+
+$textColor: #494949;
+$headerColor: #f7f7f7;
+$popColor: red;
+$navLinkColor: #000;
+$fontStack: 'Open Sans', sans-serif;
+
 * {
   box-sizing: border-box;
 }
 
 body {
   background-color: #fff;
-  color: #494949;
+  color: $textColor;
   font-size: 14px;
-  font-family: "Open Sans", sans-serif;
+  font-family: $fontStack;
 }
 
 .right {
@@ -18,13 +31,15 @@ body {
   float: left;
 }
 
+
 /*
 -------------------------
 HEADER STYLES
 -------------------------
 */
+
 header {
-  background-color: #f7f7f7;
+  background-color: $headerColor;
   height: 100px;
   position: fixed;
   top: 0;
@@ -39,102 +54,105 @@ nav {
   width: 800px;
   margin: auto;
   height: 100px;
-  border-top: 4px solid red;
-}
+  border-top: 4px solid $popColor;
 
-nav div {
-  display: inline-block;
-  line-height: 0;
-  margin: 0 40px;
-  flex: 1;
-}
+  div {
+    display: inline-block;
+    line-height: 0;
+    margin: 0 40px;
+    flex: 1;
+  }
 
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  display: inline-block;
-  flex: 10;
-}
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: inline-block;
+    flex: 10;
+  }
 
-nav li {
-  display: inline-block;
-  padding: 38px 15px 0 15px;
-  height: 100px;
-}
+  li {
+    display: inline-block;
+    padding: 38px 15px 0 15px;
+    height: 100px;
+  }
 
-nav li:hover {
-  background-color: red;
-}
+  li:hover {
+    background-color: $popColor;
 
-nav li:hover a {
-  color: #f7f7f7;
-}
+    a {
+      color: $headerColor;
+    }
+  }
 
-nav a {
-  display: block;
-  color: #000;
-  text-align: center;
-  padding: 0;
-  text-decoration: none;
-  font-size: 1.1rem;
+  a {
+    display: block;
+    color: $navLinkColor;
+    text-align: center;
+    padding: 0;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
 }
 
 .selected {
-  color: red;
+  color: $popColor;
 }
+
 
 /*
 -------------------------
 MAIN CONTENT STYLES
 -------------------------
 */
+
 aside {
   width: 30%;
   margin: 150px auto 0;
   text-align: center;
   display: block;
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-weight: normal;
+  }
 }
 
-aside h1 {
-  font-size: 2.5rem;
-}
-
-aside h2 {
-  font-weight: normal;
-}
 
 main {
   display: flex;
   width: 800px;
   margin: auto;
-}
 
-main img {
-  padding: 5px;
+  img {
+    padding: 5px;
+  }
 }
 
 .grow {
   transition: all .2s ease-in-out;
-}
 
-.grow:hover {
-  transform: scale(1.03);
+  &:hover {
+    transform: scale(1.03);
+  }
 }
 
 section {
   width: 800px;
   margin: auto;
   display: flex;
-}
 
-section h4 {
-  margin-bottom: 0;
-}
+  h4 {
+    margin-bottom: 0;
+  }
 
-section a {
-  color: #494949;
+  a {
+    color: $textColor;
+  }
 }
 
 .grid-col-one-third {
@@ -158,9 +176,7 @@ section a {
 }
 
 .three-columns {
-  -webkit-column-count: 3;
-  -moz-column-count: 3;
-  column-count: 3;
+  @include column-count(3);
 }
 
 .modern-layouts {
@@ -173,7 +189,7 @@ section a {
 }
 
 .popColor {
-  color: red;
+  color: $popColor;
 }
 
 /*
@@ -181,9 +197,10 @@ section a {
 FOOTER STYLES
 -------------------------
 */
+
 footer {
   display: flex;
-  background-color: #f7f7f7;
+  background-color: $headerColor;
   height: 100px;
   align-items: center;
   justify-content: center;

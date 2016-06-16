@@ -1,13 +1,13 @@
-@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,700';
 * {
   box-sizing: border-box;
+  /*border: 1px solid red;*/
 }
 
 body {
   background-color: #fff;
   color: #494949;
   font-size: 14px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Helvetica", Arial, sans-serif;
 }
 
 .right {
@@ -18,11 +18,13 @@ body {
   float: left;
 }
 
+
 /*
 -------------------------
 HEADER STYLES
 -------------------------
 */
+
 header {
   background-color: #f7f7f7;
   height: 100px;
@@ -50,29 +52,30 @@ nav div {
 }
 
 nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  display: inline-block;
-  flex: 10;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: inline-block;
+    flex: 10;
 }
 
-nav li {
+nav ul li {
   display: inline-block;
   padding: 38px 15px 0 15px;
   height: 100px;
+  /*margin-right: 20px;*/
 }
 
-nav li:hover {
+nav ul li:hover {
   background-color: red;
 }
 
-nav li:hover a {
+nav ul li:hover a {
   color: #f7f7f7;
 }
 
-nav a {
+nav ul li a {
   display: block;
   color: #000;
   text-align: center;
@@ -85,11 +88,13 @@ nav a {
   color: red;
 }
 
+
 /*
 -------------------------
 MAIN CONTENT STYLES
 -------------------------
 */
+
 aside {
   width: 30%;
   margin: 150px auto 0;
@@ -111,7 +116,7 @@ main {
   margin: auto;
 }
 
-main img {
+main div img {
   padding: 5px;
 }
 
@@ -129,11 +134,11 @@ section {
   display: flex;
 }
 
-section h4 {
+section div h4 {
   margin-bottom: 0;
 }
 
-section a {
+section div a {
   color: #494949;
 }
 
@@ -172,7 +177,7 @@ section a {
   padding-right: 15px;
 }
 
-.popColor {
+.red {
   color: red;
 }
 
@@ -181,6 +186,7 @@ section a {
 FOOTER STYLES
 -------------------------
 */
+
 footer {
   display: flex;
   background-color: #f7f7f7;
